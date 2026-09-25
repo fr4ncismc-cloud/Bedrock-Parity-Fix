@@ -23,10 +23,11 @@ jobs:
           gradle-version: '8.10'
 
       - name: Build
+        working-directory: bedrock-parity-paper
         run: gradle build
 
       - name: Upload plugin jar
         uses: actions/upload-artifact@v4
         with:
           name: bedrock-parity-plugin
-          path: build/libs/*.jar
+          path: bedrock-parity-paper/build/libs/*.jar
